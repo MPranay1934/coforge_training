@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Factorial Table</title>
+
+<script type="text/javascript">
+
+function factorial() {
+
+    var n1 = parseInt(document.getElementById("n1").value);
+
+    var result = "";
+    var fact = 1;
+
+    result = "<table border='1' width='60%'>";
+    result += "<tr><th>Number</th><th>Factorial</th></tr>";
+
+    for(var i = 1; i <= n1; i++) {
+
+        fact = fact * i;
+
+        result += "<tr><td>" + i + "</td><td>" + fact + "</td></tr>";
+    }
+
+    result += "</table>";
+
+    document.getElementById("output").innerHTML = result;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<input type="text" id="n1">
+
+<input type="button" value="Find Factorial" onclick="factorial()">
+
+<br><br>
+
+<div id="output"></div>
+
+</body>
+</html>   
