@@ -1,7 +1,7 @@
 <html>
 <body>
 <h2>
-<a href = "home">Employee Home</a>
+<a href = "product">Product Home</a>
 </h2>
 </body>
 </html>
