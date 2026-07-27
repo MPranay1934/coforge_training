@@ -1,0 +1,11 @@
+.MyHeading {
+    color: red;
+}
+.ZoomIn {
+    color : green;
+    font-size : 50px; 
+}
+.ZoomOut {
+    color : blue;
+    font-size : 20px; 
+}
