@@ -1,0 +1,43 @@
+<p>student-result works!</p>
+<h2>Student Result</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>S.No</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>Result</th>
+    </tr>
+
+    <tr *ngFor="let student of students; let i = index">
+
+        <td>{{i + 1}}</td>
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.marks}}</td>
+
+        <td>
+
+            <span *ngIf="student.marks >= 35; else fail">
+                Pass
+            </span>
+
+            <ng-template #fail>
+                Fail
+            </ng-template>
+
+        </td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<h3>Total Students : {{students.length}}</h3>
+
+<h3>Pass Count : {{passCount}}</h3>
+
+<h3>Fail Count : {{failCount}}</h3>

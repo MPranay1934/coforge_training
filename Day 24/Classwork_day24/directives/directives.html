@@ -1,0 +1,49 @@
+<p>directives works!</p>
+
+<button [ngStyle]="myButtonStyle" (click)="showHideDiv()">
+    Show Hide Div
+</button>
+
+@if (flag) {
+<div [ngClass]="myDivStyle">
+    {{ message }}
+
+    <ul>
+        @for (vehicle of vehicles; track vehicle) {
+        <li (click)="setSelectedVehicle(vehicle)">
+            {{ vehicle }}
+        </li>
+        }
+    </ul>
+
+    <br>
+
+    <h3>You have Selected: {{ selectedVehicle }}</h3>
+
+    @switch (selectedVehicle) {
+
+        @case ('Car') {
+            <img src="polo_gti_red.jpg" width="300">
+        }
+
+        @case ('Bike') {
+            <img src="bike.jpg" width="300">
+        }
+
+        @case ('Bus') {
+            <img src="bus.jpg" width="300">
+        }
+
+        @case ('Truck') {
+            <img src="truck.jpg" width="300">
+        }
+
+        @default {
+            <h2 style="color:red">
+                Invalid Selection
+            </h2>
+        }
+
+    }
+</div>
+}

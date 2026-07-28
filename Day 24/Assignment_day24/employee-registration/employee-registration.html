@@ -1,0 +1,147 @@
+<p>employee-registration works!</p>
+<h2>Employee Registration Form</h2>
+
+<form #empForm="ngForm" (ngSubmit)="register()">
+
+    <label>Employee Id</label><br>
+    <input type="text"
+           name="id"
+           [(ngModel)]="employee.id"
+           required
+           #id="ngModel">
+
+    <div *ngIf="id.invalid && id.touched">
+        Employee Id is required
+    </div>
+
+    <br><br>
+
+    <label>Employee Name</label><br>
+    <input type="text"
+           name="name"
+           [(ngModel)]="employee.name"
+           required
+           #name="ngModel">
+
+    <div *ngIf="name.invalid && name.touched">
+        Employee Name is required
+    </div>
+
+    <br><br>
+
+    <label>Email</label><br>
+    <input type="email"
+           name="email"
+           [(ngModel)]="employee.email"
+           required
+           email
+           #email="ngModel">
+
+    <div *ngIf="email.invalid && email.touched">
+
+        <small *ngIf="email.errors?.['required']">
+            Email is required
+        </small>
+
+        <small *ngIf="email.errors?.['email']">
+            Invalid Email
+        </small>
+
+    </div>
+
+    <br><br>
+
+    <label>Mobile Number</label><br>
+
+    <input type="text"
+           name="mobile"
+           [(ngModel)]="employee.mobile"
+           required
+           minlength="10"
+           maxlength="10"
+           #mobile="ngModel">
+
+    <div *ngIf="mobile.invalid && mobile.touched">
+        Mobile Number is required
+    </div>
+
+    <br><br>
+
+    <label>Department</label><br>
+
+    <select
+        name="department"
+        [(ngModel)]="employee.department"
+        required
+        #department="ngModel">
+
+        <option value="">Select Department</option>
+        <option>IT</option>
+        <option>HR</option>
+        <option>Finance</option>
+        <option>Marketing</option>
+
+    </select>
+
+    <div *ngIf="department.invalid && department.touched">
+        Department is required
+    </div>
+
+    <br><br>
+
+    <label>Gender</label><br>
+
+    <input
+        type="radio"
+        value="Male"
+        name="gender"
+        [(ngModel)]="employee.gender"
+        required> Male
+
+    <input
+        type="radio"
+        value="Female"
+        name="gender"
+        [(ngModel)]="employee.gender"> Female
+
+    <br><br>
+
+    <label>Date of Joining</label><br>
+
+    <input
+        type="date"
+        name="doj"
+        [(ngModel)]="employee.doj"
+        required
+        #doj="ngModel">
+
+    <div *ngIf="doj.invalid && doj.touched">
+        Date of Joining is required
+    </div>
+
+    <br><br>
+
+    <label>Salary</label><br>
+
+    <input
+        type="number"
+        name="salary"
+        [(ngModel)]="employee.salary"
+        required
+        #salary="ngModel">
+
+    <div *ngIf="salary.invalid && salary.touched">
+        Salary is required
+    </div>
+
+    <br><br>
+
+    <button
+        type="submit"
+        [disabled]="empForm.invalid">
+
+        Register
+
+    </button>
+
+</form>

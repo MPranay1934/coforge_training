@@ -1,0 +1,33 @@
+table{
+
+    width:80%;
+    margin:auto;
+    border-collapse:collapse;
+    text-align:center;
+
+}
+
+th{
+
+    background-color:black;
+    color:white;
+
+}
+
+.evenRow{
+
+    background-color:#d6f5d6;
+
+}
+
+.oddRow{
+
+    background-color:#f8d7da;
+
+}
+
+td,th{
+
+    padding:10px;
+
+}

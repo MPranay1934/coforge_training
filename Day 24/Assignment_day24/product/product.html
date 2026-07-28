@@ -1,0 +1,26 @@
+<p>product works!</p>
+<h2 align="center">Product Catalog</h2>
+
+<table border="1" cellspacing="0" cellpadding="10">
+
+    <tr>
+        <th>Row No</th>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+
+    <tr *ngFor="let product of products; let i = index;
+                let even = even; let odd = odd"
+        [ngClass]="{'evenRow': even, 'oddRow': odd}">
+
+        <td>{{i + 1}}</td>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.price}}</td>
+
+    </tr>
+
+</table>

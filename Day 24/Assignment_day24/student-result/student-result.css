@@ -1,0 +1,23 @@
+table{
+    width:70%;
+    border-collapse: collapse;
+    margin:auto;
+    text-align:center;
+}
+
+th{
+    background-color:black;
+    color:white;
+}
+
+td,th{
+    padding:10px;
+}
+
+h2{
+    text-align:center;
+}
+
+h3{
+    margin-left:220px;
+}
